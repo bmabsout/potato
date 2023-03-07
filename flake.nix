@@ -5,6 +5,12 @@
     potatoImg.flake = false;
   };
 
+  nixConfig = {
+    extra-substituters = "https://bmabsout.cachix.org";
+
+    extra-trusted-public-keys = "bmabsout.cachix.org-1:/GhCEayGQ3NHMIlJiUelQrLtHHXVdGjHtyDz32xNAo4=";
+  };
+
   outputs = { self, nixpkgs, potatoImg }:
     let
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
